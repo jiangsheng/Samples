@@ -1,0 +1,18 @@
+// Automation.idl : IDL source for Automation
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (Automation.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	uuid(0700B45E-302F-4808-847A-AE4E7AC22D01),
+	version(1.0),
+	helpstring("Automation 1.0 Type Library")
+]
+library AutomationLib
+{
+	importlib("stdole2.tlb");
+};
