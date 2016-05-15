@@ -30,6 +30,7 @@ int main()
 
 	std::vector<LPCITEMIDLIST> scopeArray;
 	scopeArray.resize(searchLocations.size());
+
 	for (size_t i = 0; i < searchLocations.size(); 
 		i++)
 	{
@@ -43,6 +44,8 @@ int main()
 	hr = SHCreateShellItemArrayFromIDLists(
 		searchLocations.size(),
 		scopeArray.data(), &scope);
+	for (auto pidl : scopeArray) { ILFree(const_cast<LPITEMIDLIST>(pidl)); }
+
 	ISearchFolderItemFactory* searchFolderFactory = nullptr;
 	hr = CoCreateInstance(CLSID_SearchFolderItemFactory, nullptr, 
 		CLSCTX_INPROC_SERVER, IID_PPV_ARGS(&searchFolderFactory));
@@ -55,10 +58,8 @@ int main()
 	std::vector<std::wstring> extensions;
 	extensions.push_back(L".exe");
 	extensions.push_back(L".dll");
-	size_t arrayLen = extensions.size();
-	std::vector<ICondition*> filterConditions(arrayLen);
-
-	for (size_t i = 0; i < arrayLen; i++)
+	std::vector<ICondition*> filterConditions(extensions.size());
+	for (size_t i = 0; i < extensions.size(); i++)
 	{
 		hr = conditionFactory->CreateStringLeaf(
 			PKEY_FileExtension, 
@@ -93,8 +94,7 @@ int main()
 		BHID_EnumItems, IID_PPV_ARGS(&shellEnumerator));
 	searchFolder->Release();
 
-	std::vector<IShellItem*> shellItemBuffer;
-	shellItemBuffer.resize(100);
+	std::vector<IShellItem*> shellItemBuffer(100);
 	unsigned long fetched = 0;
 	IMetaDataDispenser* dispenser = nullptr;
 	hr = CoCreateInstance(CLSID_CorMetaDataDispenser, 
