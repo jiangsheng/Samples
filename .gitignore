@@ -213,3 +213,5 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+/HtmlCaretTest/HtmlCaretTest.VC.VC.opendb
+/HtmlCaretTest/HtmlCaretTest.VC.db
