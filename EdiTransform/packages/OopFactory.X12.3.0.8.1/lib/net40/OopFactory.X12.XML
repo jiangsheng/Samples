@@ -1,0 +1,313 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OopFactory.X12</name>
+    </assembly>
+    <members>
+        <member name="F:OopFactory.X12.Parsing.Model.Typed.DTPFormatQualifier.YDDD">
+            <summary>
+            Last Digit of Year and Julian Date Expressed in Format YDDD
+            </summary>
+        </member>
+        <member name="F:OopFactory.X12.Parsing.Model.Typed.DTPFormatQualifier.DDD">
+            <summary>
+            Julian Date Expressed in Format DDD
+            </summary>
+        </member>
+        <member name="T:OopFactory.X12.Parsing.Model.Typed.TypedLoopIT1">
+            <summary>
+            Baseline Item Data (Invoice)
+            </summary>
+        </member>
+        <member name="T:OopFactory.X12.Parsing.Model.Typed.TypedSegmentBIG">
+            <summary>
+            Beginning Segment for Invoice
+            </summary>
+        </member>
+        <member name="P:OopFactory.X12.Parsing.Model.Typed.TypedSegmentBIG.BIG07_TransactionTypeCode">
+            <summary>
+            CN = Credit Invoice
+            CR = Credit Memo
+            DI = Debit Invoice
+            DR = Debit Memo
+            </summary>
+        </member>
+        <member name="T:OopFactory.X12.Parsing.Model.Typed.TypedSegmentCAD">
+            <summary>
+            Carrier Detail
+            </summary>
+        </member>
+        <member name="P:OopFactory.X12.Parsing.Model.Typed.TypedSegmentCAD.CAD01_TransportationMethodTypeCode">
+            <summary>
+            K = Back Haul
+            M = Motor (Common Carrier)
+            R = Rail
+            U = Private Parcel Service
+            ZZ = Mutually Defined
+            </summary>
+        </member>
+        <member name="T:OopFactory.X12.Parsing.Model.Typed.TypedSegmentCTP">
+            <summary>
+            Pricing Infomration
+            </summary>
+        </member>
+        <member name="T:OopFactory.X12.Parsing.Model.Typed.TypedSegmentCTT">
+            <summary>
+            Transaction Totals
+            </summary>
+        </member>
+        <member name="T:OopFactory.X12.Parsing.Model.Typed.TypedSegmentCUR">
+            <summary>
+            Currency
+            </summary>
+        </member>
+        <member name="P:OopFactory.X12.Parsing.Model.Typed.TypedSegmentCUR.CUR01_EntityIdentifierCode">
+            <summary>
+            BY = Buying Party (Purchaser)
+            SE = Selling Party
+            </summary>
+        </member>
+        <member name="P:OopFactory.X12.Parsing.Model.Typed.TypedSegmentCUR.CUR02_CurrencyCode">
+            <summary>
+            CAD = Canadian dollars
+            USD = US Dollars
+            </summary>
+        </member>
+        <member name="T:OopFactory.X12.Parsing.Model.Typed.TypedSegmentDTM">
+            <summary>
+            Date/Time Reference
+            </summary>
+        </member>
+        <member name="T:OopFactory.X12.Parsing.Model.Typed.TypedSegmentFOB">
+            <summary>
+            F.O.B. RElated Instructions
+            </summary>
+        </member>
+        <member name="P:OopFactory.X12.Parsing.Model.Typed.TypedSegmentFOB.FOB01_ShipmentMethodOfPayment">
+            <summary>
+            11 = Rule 11 Shipment
+            BP = Paid by Buyer
+            CA = Advance Collect
+            CC = Collect
+            CD = Collect on Delivery
+            CF = Collect, Freight Credited Back to Customer
+            DE = Per Contract
+            DF = Defined by Buyer and Seller
+            FO = FOB Port of Call
+            HP = Half Prepaid
+            MX = Mixed
+            NC = Service Freight, No Charge
+            NR = Non Revenue
+            PA = Advance Prepaid
+            PB = Customer Pickup/Backhaul
+            PC = Prepaid but charged to Customer
+            PD = Prepaid by Processor
+            PE = Prepaid and Summary Bill
+            PL = Prepaid Local, Collect Outstate
+            PO = Prepaid Only
+            PP = Prepaid (by Seller)
+            PS = Paid by Seller
+            PU = Pickup
+            RC = Return Container Freight Paid by Customer
+            RF = Return Container Freight Free
+            RS = Return Container Freight Paid by Supplier
+            TP = Third Party Pay
+            WC = Weight Condition
+            ZZ = Mutually Defined
+            </summary>
+        </member>
+        <member name="T:OopFactory.X12.Parsing.Model.Typed.TypedSegmentHCP">
+            <summary>
+            Health Care Pricing, to specify pricing or repricing information about a health care claim or line item
+            </summary>
+        </member>
+        <member name="T:OopFactory.X12.Parsing.Model.Typed.TypedSegmentISS">
+            <summary>
+            Invoice Shipment Summary
+            </summary>
+        </member>
+        <member name="P:OopFactory.X12.Parsing.Model.Typed.TypedSegmentISS.ISS02_UnitOrBasisForMeasurementCode">
+            <summary>
+            CA = Case
+            </summary>
+        </member>
+        <member name="P:OopFactory.X12.Parsing.Model.Typed.TypedSegmentISS.ISS04_UnitOrBasisForMeasurementCode">
+            <summary>
+            LB = Pounds
+            </summary>
+        </member>
+        <member name="T:OopFactory.X12.Parsing.Model.Typed.TypedSegmentITD">
+            <summary>
+            Terms of Sale/Deferred Terms of Sale
+            </summary>
+        </member>
+        <member name="P:OopFactory.X12.Parsing.Model.Typed.TypedSegmentITD.ITD02_TermsBasisDateCode">
+            <summary>
+            1 = Ship Date
+            2 = Delivery Date
+            3 = Invoice Date
+            </summary>
+        </member>
+        <member name="P:OopFactory.X12.Parsing.Model.Typed.TypedSegmentITD.ITD08_TermsDiscountAmountN2">
+            <summary>
+            This is an implied decimal with 2 decimal points,
+            multiply your decimal by 100 to assign here
+            </summary>
+        </member>
+        <member name="P:OopFactory.X12.Parsing.Model.Typed.TypedSegmentITD.ITD10_DeferredAmountDueN2">
+            <summary>
+            This is an implied decimal with 2 decimal points,
+            multiply your decimal by 100 to assign here
+            </summary>
+        </member>
+        <member name="T:OopFactory.X12.Parsing.Model.Typed.TypedSegmentMSG">
+            <summary>
+            Message Text
+            </summary>
+        </member>
+        <member name="T:OopFactory.X12.Parsing.Model.Typed.TypedSegmentNTE">
+            <summary>
+            Note/Secial Instruction
+            </summary>
+        </member>
+        <member name="P:OopFactory.X12.Parsing.Model.Typed.TypedSegmentNTE.NTE01_NoteReferenceCode">
+            <summary>
+            GEN = Entire Transaction Set
+            </summary>
+        </member>
+        <member name="T:OopFactory.X12.Parsing.Model.Typed.TypedSegmentPID">
+            <summary>
+            Product/Item Description
+            </summary>
+        </member>
+        <member name="P:OopFactory.X12.Parsing.Model.Typed.TypedSegmentPID.PID01_ItemDescriptionType">
+            <summary>
+            F = Free form
+            </summary>
+        </member>
+        <member name="T:OopFactory.X12.Parsing.Model.Typed.DateTimePeriod">
+            <summary>
+            Move this class in seperate file if being used by other classes.
+            </summary>
+        </member>
+        <member name="T:OopFactory.X12.Parsing.Model.Typed.TypedSegmentSAC">
+            <summary>
+            Service, Promotion, Allowance, or Charge Information
+            </summary>
+        </member>
+        <member name="P:OopFactory.X12.Parsing.Model.Typed.TypedSegmentSAC.SAC05_AmountN2">
+            <summary>
+            This is an implied decimal with 2 decimal points,
+            multiply your decimal by 100 to assign here
+            </summary>
+        </member>
+        <member name="P:OopFactory.X12.Parsing.Model.Typed.TypedSegmentSAC.SAC06_AllowanceChargePercentQualifier">
+            <summary>
+            3 = Discount/Gross
+            Z = Mutually Defined
+            </summary>
+        </member>
+        <member name="T:OopFactory.X12.Parsing.Model.Typed.TypedSegmentTDS">
+            <summary>
+            Total Monetary Value Summary
+            </summary>
+        </member>
+        <member name="P:OopFactory.X12.Parsing.Model.Typed.TypedSegmentTDS.TDS01_AmountN2">
+            <summary>
+            This is an implied decimal with 2 decimal points,
+            multiply your decimal by 100 to assign here
+            </summary>
+        </member>
+        <member name="P:OopFactory.X12.Parsing.Model.Typed.TypedSegmentTDS.TDS02_AmountN2">
+            <summary>
+            This is an implied decimal with 2 decimal points,
+            multiply your decimal by 100 to assign here
+            </summary>
+        </member>
+        <member name="P:OopFactory.X12.Parsing.Model.Typed.TypedSegmentTDS.TDS03_AmountN2">
+            <summary>
+            This is an implied decimal with 2 decimal points,
+            multiply your decimal by 100 to assign here
+            </summary>
+        </member>
+        <member name="P:OopFactory.X12.Parsing.Model.Typed.TypedSegmentTDS.TDS04_AmountN2">
+            <summary>
+            This is an implied decimal with 2 decimal points,
+            multiply your decimal by 100 to assign here
+            </summary>
+        </member>
+        <member name="T:OopFactory.X12.Parsing.Model.Typed.TypedSegmentTXI">
+            <summary>
+            Tax Information
+            </summary>
+        </member>
+        <member name="P:OopFactory.X12.Parsing.Model.Typed.TypedLoopPID.PID01_ItemDescriptionType">
+            <summary>
+            F = Free form
+            </summary>
+        </member>
+        <member name="P:OopFactory.X12.Repositories.RepoEntitySearchCriteria`1.EntityIdentifierCodes">
+            <summary>
+            Comma delimited string of entity identifierCodes to include in results
+            </summary>
+        </member>
+        <member name="T:OopFactory.X12.Repositories.SqlGuidTransactionRepository">
+            <summary>
+            Uses a Guid for all identity columns,
+            batches the inserts of loops and segments,
+            and allows for an overridable method for creating new Guids
+            so that users can apply their own guid comb algorithms
+            </summary>
+        </member>
+        <member name="T:OopFactory.X12.Repositories.SqlTransactionRepository`1">
+            <summary>
+            Class for storing, retrieving and revising X12 messages.
+            This library only does inserts.  Edits and Deletes are accomplished through revisions, but all revisions are retained.
+            The Get methods will allow you choose the revision you want.
+            </summary>
+            <typeparam name="T">The type of all identity columns:  supports int or long</typeparam>
+        </member>
+        <member name="M:OopFactory.X12.Repositories.SqlReadOnlyTransactionRepository`1.GetTransactionSetSegments(`0,System.Int32,System.Boolean)">
+            <summary>
+            Retrieve all the segments within a transaction
+            </summary>
+            <param name="transactionSetId"></param>
+            <param name="revisionId">Use 0 for the original version Int32.MaxValue when you want the latest revision</param>
+            <param name="includeControlSegments">This will include the ISA, GS, GE and IEA segments</param>
+            <returns></returns>
+        </member>
+        <member name="M:OopFactory.X12.Repositories.SqlReadOnlyTransactionRepository`1.GetTransactionSegments(`0,System.Int32,System.Boolean)">
+            <summary>
+            This will affectively unbundle the transaction from the rest of the transaction set and show you segments related to that loopId.
+            </summary>
+            <param name="loopId">The loopId for retrieving it's ancestor and descendant segments</param>
+            <param name="revisionId">Use 0 for the original version and Int32.MaxValue for the latest version</param>
+            <param name="includeControlSegments">This will include the ISA, GS, GE and IEA segments</param>
+            <returns></returns>
+        </member>
+        <member name="M:OopFactory.X12.Repositories.SqlTransactionRepository`1.EnsureSchema">
+            <summary>
+            override this with no implementation when your database is already created and you will not need to check for existance of the objects.
+            </summary>
+        </member>
+        <member name="M:OopFactory.X12.Repositories.SqlTransactionRepository`1.Save(OopFactory.X12.Parsing.Model.Interchange,System.String,System.String)">
+            <summary>
+            Saves the entire interchange into the database as individual segments and the relationships between the segments and loops
+            </summary>
+            <param name="interchange">The parsed interchange object</param>
+            <param name="filename"></param>
+            <param name="userName"></param>
+            <returns>The interchangeId from the database</returns>
+        </member>
+        <member name="M:OopFactory.X12.Repositories.SqlTransactionRepository`1.SaveRevision(System.Collections.Generic.IList{OopFactory.X12.Repositories.RepoSegment{`0}},System.String,System.String)">
+            <summary>
+            This will save revisions to an x12 transaction that was returned from the GetTransactionSegments method.
+            The update is stored as inserts into the database, and only the most current revision that hasn't been deleted is returned on the next retrieval
+            </summary>
+            <param name="segments">The segments to be updated, only segments with a different SegmentString or Deleted value will be updated</param>
+            <param name="comments">The reason for the revision</param>
+            <param name="revisedBy">Ther username of the user who has made the revision</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
