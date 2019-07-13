@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.352
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComparePaths", "ComparePaths\ComparePaths.csproj", "{DDBB7ADB-355F-47EE-A0FE-C0868B9F0847}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DDBB7ADB-355F-47EE-A0FE-C0868B9F0847}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDBB7ADB-355F-47EE-A0FE-C0868B9F0847}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDBB7ADB-355F-47EE-A0FE-C0868B9F0847}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDBB7ADB-355F-47EE-A0FE-C0868B9F0847}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B53CBCBB-E5EB-45A1-9E08-5ACBE6609CF3}
+	EndGlobalSection
+EndGlobal
