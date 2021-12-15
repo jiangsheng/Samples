@@ -1,11 +1,11 @@
 Samples
 =======
 
-sample code written to answer questions
+sample code written to answer forum questions
 
 AppBarTest for thread Change Windows 7 taskbar location automatically based on screen shape or on docking status http://stackoverflow.com/questions/12435503/change-windows-7-taskbar-location-automatically-based-on-screen-shape-or-on-dock
 
-AutoCompleteDemo is a WinForms application that fills TextBox AutoComplete suggestions programmatically. You will AccessViolationException: "Attempted to read or write protected memory. This is often an indication that other memory is corrupt." if you replace AutoCompleteCustomSource in the TextChanged event (https://social.msdn.microsoft.com/Forums/windowsdesktop/en-US/e599b2e2-3cda-43ad-b15f-a69b4fea1a75/dynamic-filling-of-textbox-autocomplete-not-working?forum=winforms). 
+AutoCompleteDemo is a WinForms application that fills TextBox AutoComplete suggestions programmatically. You will get AccessViolationException: "Attempted to read or write protected memory. This is often an indication that other memory is corrupt." if you replace AutoCompleteCustomSource in the TextChanged event (https://social.msdn.microsoft.com/Forums/windowsdesktop/en-US/e599b2e2-3cda-43ad-b15f-a69b4fea1a75/dynamic-filling-of-textbox-autocomplete-not-working?forum=winforms). 
 
 AutomateShellWindow is a MFC application that automates Windows Explorer.
 
