@@ -23,6 +23,8 @@ MFCSafeArrayTest is a MFC application that creates a one deminsion safe array,
 
 MFCWinFormHybrid for testing the effects of replacing the MFC message pump with a Windows Forms one
 
+RemoveNodeFromXml is for walking around the bug Unable to open a channel that has SSLProperties in Mirth Connect without SSL Plugin #4238 (https://github.com/nextgenhealthcare/connect/issues/4238), by removing settings for missing plugin before importing.
+
 SelectCustomPlaces is a C# program that shows how to add custom places to a Vista stype file dialog. 
 
 SelenuimTest is a console program that automates a Google Chrome instance. 
