@@ -1,0 +1,11 @@
+HKCR
+{
+	NoRemove AppID
+	{
+		{0DDE8E5D-4956-4464-8EA1-2BD6FBB7EF6A} = s 'WDSSample'
+		'WDSSample.EXE'
+		{
+			val AppID = s {0DDE8E5D-4956-4464-8EA1-2BD6FBB7EF6A}
+		}
+	}
+}

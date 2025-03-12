@@ -1,0 +1,19 @@
+
+	// WDSSample.idl : IDL source for WDSSample.exe
+//
+// This file will be processed by the MIDL tool to
+// produce the type library (WDSSample.tlb) and marshalling code.
+import "oaidl.idl";
+import "ocidl.idl";
+[
+	uuid(B20D320D-4292-4F3C-9756-F0A9A28D5B9C),
+	version(1.0),
+	helpstring("WDSSample 1.0 Type Library")
+]
+library WDSSampleLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+};
+
+	

@@ -1,0 +1,59 @@
+//------------------------------------------------------------------------------
+// wdsQuery.idl
+//------------------------------------------------------------------------------
+// Copyright 1995-2005 Microsoft Corporation.  All Rights Reserved.
+//
+// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF 
+// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO 
+// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A 
+// PARTICULAR PURPOSE.
+//------------------------------------------------------------------------------
+//
+// Public interfaces/objects for Windows Desktop Search 
+//
+//------------------------------------------------------------------------------
+
+import "oaidl.idl";
+import "ocidl.idl";
+import "msado15.idl";
+
+//////////////////////////////////
+// ISearchDesktop interface
+//////////////////////////////////
+
+[
+	object,
+	uuid(A227843C-1D92-48bc-AED6-DCA566F1790E),
+	pointer_default(ref),
+	local
+]
+interface ISearchDesktop : IUnknown
+{
+    // perform a search given the SQL
+    HRESULT ExecuteSQLQuery([in] LPCWSTR lpcwstrSQL, [out, retval] _Recordset **ppiRs);
+
+    // perform a search given the query string
+    HRESULT ExecuteQuery([in] LPCWSTR lpcwstrQuery,               // the query (like you'd type in to the query box)
+                         [in] LPCWSTR lpcwstrColumn,              // columns to include (just comma-separated, it'll be put right into the SQL)
+                         [in] LPCWSTR lpcwstrSort,                // sort to do (again, it'll be plopped right into the SQL)
+                         [in] LPCWSTR lpcwstrRestriction,         // a "where" clause to be appended, eg., "Contains(foo,'bar')"
+                         [out, retval] _Recordset **ppiRs);       // the resulting recordset
+}
+
+
+[
+    uuid(C12176E9-2ADB-4f72-B99D-34370D2C33C0), 
+    helpstring("Windows Desktop Search Query Namespace"),
+    lcid(0x0000),
+    version(2.5),
+    custom(0F21F359-AB84-41e8-9A78-36D110E6D2F9, "Microsoft.Windows.DesktopSearch.Query")
+]
+library WDSQuery
+{
+    // CLSID_SearchDesktop
+    [ uuid(1AD68C99-00FB-416d-804B-C38DEE75D55E) ] 
+    coclass SearchDesktop
+    { 
+        interface ISearchDesktop; 
+    }
+};

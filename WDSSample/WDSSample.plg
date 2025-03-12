@@ -1,0 +1,91 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: WDSSample - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "midl.exe /nologo /D "_DEBUG" /tlb "Debug/WDSSample.tlb" /h "WDSSample_i.h" /iid "WDSSample_i.c" /Oicf /win32 "E:\code\WDSSample\WDSSample.idl""
+Creating command line "rc.exe /l 0x804 /fo"Debug/WDSSample.res" /d "_DEBUG" /d "_AFXDLL" "E:\code\WDSSample\WDSSample.rc"" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP168.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/WDSSample.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\code\WDSSample\ChildFrm.cpp"
+"E:\code\WDSSample\MainFrm.cpp"
+"E:\code\WDSSample\SearchOptionDlg.cpp"
+"E:\code\WDSSample\WDSSample.cpp"
+"E:\code\WDSSample\WDSSampleDoc.cpp"
+"E:\code\WDSSample\WDSSampleView.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP168.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP169.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/WDSSample.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\code\WDSSample\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP169.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP16A.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/WDSSample.pdb" /debug /machine:I386 /out:"Debug/WDSSample.exe" /pdbtype:sept 
+.\Debug\ChildFrm.obj
+.\Debug\MainFrm.obj
+.\Debug\SearchOptionDlg.obj
+.\Debug\StdAfx.obj
+.\Debug\WDSSample.obj
+.\Debug\WDSSampleDoc.obj
+.\Debug\WDSSampleView.obj
+.\Debug\WDSSample.res
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP16A.tmp"
+<h3>Output Window</h3>
+Creating Type Library...
+Processing E:\code\WDSSample\WDSSample.idl
+WDSSample.idl
+Processing E:\PROGRAM FILES\MICROSOFT SDK\INCLUDE\oaidl.idl
+oaidl.idl
+Processing E:\PROGRAM FILES\MICROSOFT SDK\INCLUDE\objidl.idl
+objidl.idl
+Processing E:\PROGRAM FILES\MICROSOFT SDK\INCLUDE\unknwn.idl
+unknwn.idl
+Processing E:\PROGRAM FILES\MICROSOFT SDK\INCLUDE\wtypes.idl
+wtypes.idl
+Processing E:\PROGRAM FILES\MICROSOFT SDK\INCLUDE\basetsd.h
+basetsd.h
+Processing E:\PROGRAM FILES\MICROSOFT SDK\INCLUDE\guiddef.h
+guiddef.h
+Processing E:\PROGRAM FILES\MICROSOFT SDK\INCLUDE\ocidl.idl
+ocidl.idl
+Processing E:\PROGRAM FILES\MICROSOFT SDK\INCLUDE\oleidl.idl
+oleidl.idl
+Processing E:\PROGRAM FILES\MICROSOFT SDK\INCLUDE\servprov.idl
+servprov.idl
+Processing E:\PROGRAM FILES\MICROSOFT SDK\INCLUDE\urlmon.idl
+urlmon.idl
+Processing E:\PROGRAM FILES\MICROSOFT SDK\INCLUDE\msxml.idl
+msxml.idl
+Processing E:\PROGRAM FILES\MICROSOFT SDK\INCLUDE\oaidl.acf
+oaidl.acf
+Processing E:\PROGRAM FILES\MICROSOFT SDK\INCLUDE\ocidl.acf
+ocidl.acf
+Compiling resources...
+Compiling...
+StdAfx.cpp
+e:\code\wdssample\debug\msado15.tlh(409) : warning C4146: unary minus operator applied to unsigned type, result still unsigned
+Compiling...
+ChildFrm.cpp
+MainFrm.cpp
+SearchOptionDlg.cpp
+WDSSample.cpp
+WDSSampleDoc.cpp
+WDSSampleView.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+WDSSample.exe - 0 error(s), 1 warning(s)
+</pre>
+</body>
+</html>

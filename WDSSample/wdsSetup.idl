@@ -1,0 +1,190 @@
+//------------------------------------------------------------------------------
+// wdsSetup.idl
+//------------------------------------------------------------------------------
+// Copyright 1995-2005 Microsoft Corporation.  All Rights Reserved.
+//
+// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF 
+// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO 
+// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A 
+// PARTICULAR PURPOSE.
+//------------------------------------------------------------------------------
+//
+// Public interfaces/objects for Windows Desktop Search 
+//
+//------------------------------------------------------------------------------
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+// Forward declares
+
+interface IEnumSearchFolder;
+interface ISearchProtocolUI;
+
+//=============================================================================
+//
+//                              UI Interfaces
+//
+//=============================================================================
+
+//+----------------------------------------------------------------------------
+//
+//  Interface:  ISearchCrawlScopeManager
+//
+//  Comment:    Defines interface for adding default inclusion and exclusion rules for
+//              a protocol handler
+//
+//+----------------------------------------------------------------------------
+[
+    object,
+    local,
+    uuid(694BC091-CEC8-41c6-937A-82E7458B17DB),
+    helpstring("ISearchCrawlScopeManager interface"),
+    pointer_default(unique)
+]
+interface ISearchCrawlScopeManager : IUnknown
+{
+    HRESULT AddDefaultUrl([in, string]LPCWSTR pszUrl, [in]BOOL fInclude);
+}
+
+//+----------------------------------------------------------------------------
+// defines SearchFolder data structure
+//+----------------------------------------------------------------------------
+typedef struct tagSearchFolder
+{
+    BSTR bstrDisplayName;     // Display name of this folder ex: "foo"
+    BSTR bstrPhysicalURL;     // physical url ex: "mail://localhost/bar/blat/foo/" 
+} SearchFolder;
+
+//+----------------------------------------------------------------------------
+//
+//  Interface:  IEnumSearchFolder
+//      
+// this defines an interface to return SearchFolder objects
+// (NOTE THIS IS NOT USED YET!)
+//+----------------------------------------------------------------------------
+[
+    object,
+    uuid(9C590DA1-8109-43cf-A2AF-2DB94A0EAF62),
+    pointer_default(unique)
+]
+interface IEnumSearchFolder : IUnknown
+{
+    typedef [unique] IEnumSearchFolder  *LPENUMFOLDERENTRY;
+
+    HRESULT Next([in] ULONG celt,
+                 [out, size_is(celt), length_is(*pceltFetched)] SearchFolder *rgelt,
+                 [out] ULONG *pceltFetched);
+
+    HRESULT Skip([in] ULONG celt);
+
+    HRESULT Reset();
+
+    HRESULT Clone( [out] IEnumSearchFolder **ppenum);
+}
+
+
+//+----------------------------------------------------------------------------
+//
+//  Interface:  ISearchProtocolOptions
+//
+//  Comment:    Defines information for a ISearchProtocol protocol handler
+//  to interact with options page
+//
+//+----------------------------------------------------------------------------
+cpp_quote("#define PRTH_E_NO_APPLICATION               ((DWORD)PRTH_E_ACL_TOO_BIG+1)")
+cpp_quote("#define PRTH_E_MIN_VERSION	               ((DWORD)PRTH_E_ACL_TOO_BIG+2)")
+cpp_quote("#define PRTH_E_NOT_CONFIGURED               ((DWORD)PRTH_E_ACL_TOO_BIG+3)")
+
+[
+    object,
+    local,
+    uuid(3C158646-6AA0-4a43-B4F6-2419E05A7B4B),
+    helpstring("ISearchProtocolOptions interface"),
+    pointer_default(unique)
+]
+interface ISearchProtocolOptions : IUnknown
+{
+    //
+    // return user-friendly localized description of requirements for this protocol handler
+	// example: "Microsoft Outlook 2000 or greater"
+    //
+    [helpstring("method GetRequirements")] 
+    HRESULT GetRequirements([out, retval] BSTR *pbstrDescription);
+
+	// return if the requirements for using the protocol handler are met.
+	// this allows a options UI to blank out protocols which are not appropraite based
+	// on whatever resource the protocol handler needs
+	// return values: 
+	//	S_OK == everything OK
+	//	PRTH_E_NO_APPLICATION = application is not installed
+	//  PRTH_E_MIN_VERSION = version is earlier then minimum
+    //
+	[helpstring("method CheckRequirements")] 
+    HRESULT CheckRequirements();
+
+    //
+    //   EnumSearchFolder
+    //
+    // Enumerates the sub-folders off of the current item
+    // NOT USED YET
+    HRESULT EnumSearchFolder([in,string] LPCOLESTR pwszUrl, 
+                             [out,retval]IEnumSearchFolder **ppEnumSearchFolder);
+
+    //
+    //   GetDefaultCrawlScope
+    //
+    // Calls into a protocol handler to give it the opportunity to define 
+    // default inclusion/exclusion rules for a protocol.  These are the default
+    // rules that will be used unless the user goes into advanced options dialog
+    // and starts adding and removing urls themselves.
+    //
+    HRESULT GetDefaultCrawlScope([in]ISearchCrawlScopeManager *pCrawlScopeManager);
+}
+
+//+----------------------------------------------------------------------------
+//
+//  Interface:  ISearchManager
+//
+//  Comment:    API to add or remove a ISearchProtocol protocol handler
+//
+//+----------------------------------------------------------------------------
+[
+    object,
+    local,
+    uuid(7F3A3F52-5FF9-447c-8E8F-FDBAE5231F7A),
+    helpstring("ISearchManager interface"),
+    pointer_default(unique)
+]
+interface ISearchManager : IUnknown
+{
+    [helpstring("Adds a new protocol handler")]
+    HRESULT AddProtocol([in, string] LPCOLESTR pszProtocolName, 
+                        [in, string] LPCOLESTR pszProgId);
+
+    [helpstring("Removes an existing protocol handler")]
+    HRESULT RemoveProtocol([in, string] LPCOLESTR pszProtocolName);
+};
+
+
+// ----------------------------------------------------------------
+//          Library definition
+// ----------------------------------------------------------------
+[
+    uuid(ACC00AA1-73BA-4E89-A650-345A7E254A60),
+    version(2.5),
+    helpstring("Windows Desktop Search Setup Namespace"),
+    custom(0F21F359-AB84-41e8-9A78-36D110E6D2F9, "Microsoft.Windows.DesktopSearch.Setup")
+]
+library WDSSetup
+{
+    [
+        uuid(963D107C-4A82-4756-9370-F6C67533DFF1),
+        helpstring("Desktop Search Management")
+    ]
+    coclass SearchManager
+    {
+        [default] interface ISearchManager;
+    }
+};
+
