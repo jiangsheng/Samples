@@ -35,6 +35,8 @@ SelectCustomPlaces is a C# program that shows how to add custom places to a Vist
 
 SelenuimTest is a console program that automates a Google Chrome instance. 
 
+TrapControlAltDelete is a C++ program that disables Control+Alt+Delete on Windows 2000/XP. 
+
 WDSSample is a sample showing how to query Windows Desktop Search index from a desktop application. 
 
 WinFormsHTMLSegments is a sample that demostrates how to highlight HTML fragments from a webbrowser host.  

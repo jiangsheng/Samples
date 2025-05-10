@@ -1,0 +1,32 @@
+# Microsoft Developer Studio Generated Dependency File, included by TrapKeys.mak
+
+.\StatLink.cpp : \
+	".\StatLink.h"\
+	
+
+.\StdAfx.cpp : \
+	".\StdAfx.h"\
+	"d:\msdev\sdk\include\basetsd.h"\
+	"d:\msdev\sdk\include\guiddef.h"\
+	"d:\msdev\sdk\include\propidl.h"\
+	"d:\msdev\sdk\include\reason.h"\
+	"d:\msdev\sdk\include\stralign.h"\
+	"d:\msdev\sdk\include\tvout.h"\
+	
+
+.\TaskKeyMgr.cpp : \
+	".\TaskKeyHook.h"\
+	".\TaskKeyMgr.h"\
+	
+
+.\TrapKeys.cpp : \
+	".\TaskKeyHook.h"\
+	".\StatLink.h"\
+	".\TaskKeyMgr.h"\
+
+
+.\TrapKeys.rc : \
+	".\res\app.ico"\
+	".\res\app.rc2"\
+	".\res\msdn.bmp"\
+	
