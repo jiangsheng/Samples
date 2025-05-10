@@ -1,0 +1,13 @@
+REGEDIT
+; This .REG file may be used by your SETUP program.
+;   If a SETUP program is not available, the entries below will be
+;   registered in your InitInstance automatically with a call to
+;   CWinApp::RegisterShellFileTypes and COleObjectFactory::UpdateRegistryAll.
+
+
+HKEY_CLASSES_ROOT\IEAutomation.Document = IEAuto Document
+HKEY_CLASSES_ROOT\IEAutomation.Document\CLSID = {8A483A03-99C1-4073-8B75-967DE3C39503}
+
+HKEY_CLASSES_ROOT\CLSID\{8A483A03-99C1-4073-8B75-967DE3C39503} = IEAuto Document
+HKEY_CLASSES_ROOT\CLSID\{8A483A03-99C1-4073-8B75-967DE3C39503}\ProgId = IEAutomation.Document
+HKEY_CLASSES_ROOT\CLSID\{8A483A03-99C1-4073-8B75-967DE3C39503}\LocalServer32 = IEAUTOMATION.EXE

@@ -1,0 +1,128 @@
+// IEAutomation.odl : type library source for IEAutomation.exe
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (IEAutomation.tlb).
+
+[ uuid(6627B8C6-C0B2-4438-B989-61EF9A97FCD8), version(1.0) ]
+library IEAutomation
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+	//  Primary dispatch interface for CIEAutomationDoc
+	
+	[ uuid(2584251F-6B75-4C2B-AF3E-CFCE6E899F97) ]
+	dispinterface IIEAutomation
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CIEAutomationDoc)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CIEAutomationDoc)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CIEAutomationDoc
+	
+	[ uuid(8A483A03-99C1-4073-8B75-967DE3C39503) ]
+	coclass Document
+	{
+		[default] dispinterface IIEAutomation;
+	};
+
+
+	//  Primary dispatch interface for CIEAutomationView
+	
+	[ uuid(31BB0017-183E-4BB6-AF90-907EFE4CEA01) ]
+	dispinterface IIEAutomationView
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CIEAutomationView)
+			[id(1)] IDispatch* WebBrowser;
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CIEAutomationView)
+			[id(2)] IDispatch* HostCreateObject(VARIANT bstrProgID);
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CIEAutomationView
+
+	[ uuid(089727D9-15D2-470C-ABCE-963FFC6A9E0C) ]
+	coclass IEAutomationView
+	{
+		[default] dispinterface IIEAutomationView;
+	};
+
+
+	//  Primary dispatch interface for CDOMExternal
+	
+	[ uuid(127148C0-2337-4923-B70A-6DA929E10451) ]
+	dispinterface IDOMExternal
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CDOMExternal)
+			[id(1)] IDispatch* menuArguments;
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CDOMExternal)
+			[id(3)]	void AddChannel([in] BSTR URL);
+			[id(4)]	void AddDesktopComponent([in] BSTR URL, [in] BSTR Type, [in, optional] VARIANT Left, [in, optional] VARIANT Top, [in, optional] VARIANT Width, [in, optional] VARIANT Height);
+			[id(8)]	VARIANT_BOOL IsSubscribed([in] BSTR URL);
+			[id(9)]	void NavigateAndFind([in] BSTR URL,[in] BSTR strQuery,[in] VARIANT varTargetFrame);
+			[id(7)]	void ImportExportFavorites([in] VARIANT_BOOL fImport, [in] BSTR strImpExpPath);
+			[id(5)]void AutoCompleteSaveForm([in, optional] VARIANT Form);
+			[id(6)]void AutoScan([in] BSTR strSearch, [in] BSTR strFailureUrl,[in, optional] VARIANT pvarTargetFrame);
+			[id(10)]VARIANT ShowBrowserUI([in] BSTR bstrName,[in] VARIANT pvarIn);
+			[id(11)] void AddFavorite(BSTR URL, VARIANT Title);
+		//}}AFX_ODL_METHOD
+
+	};
+	//  Primary events interface for IDOMExternal
+	
+	[ uuid(A7E7F294-7887-4B37-851E-EF9EDCBA2EBF),
+		  helpstring("Event interface for DOMExternal Object") ]
+	dispinterface IDOMExternalEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CDOMExternal)
+			[id(1)] void BeforeNavigate2(IDispatch* pDisp, VARIANT* URL, VARIANT* Flags, VARIANT* TargetFrameName, VARIANT* PostData, VARIANT* Headers, boolean* Cancel);
+			//}}AFX_ODL_EVENT
+
+	};
+
+	//  Class information for CDOMExternal
+
+	[ uuid(761F8EA8-5593-4C63-B853-08836021E27B) ]
+	coclass DOMExternal
+	{
+		[default] dispinterface IDOMExternal;
+		[default, source] dispinterface IDOMExternalEvents;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

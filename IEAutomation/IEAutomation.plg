@@ -1,0 +1,38 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: IEAutomation - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\yue\LOCALS~1\Temp\RSP286.tmp" with contents
+[
+shlwapi.lib /nologo /subsystem:windows /incremental:no /pdb:"Release/IEAutomation.pdb" /machine:I386 /out:"Release/IEAutomation.exe" 
+.\Release\ChildFrm.obj
+.\Release\cmdtargetplus.obj
+.\Release\CustomControlSite.obj
+.\Release\CustomOccManager.obj
+.\Release\DlgAuthenticate.obj
+.\Release\DlgDocOutline.obj
+.\Release\DlgInputText.obj
+.\Release\DOMExternal.obj
+.\Release\IEAutomation.obj
+.\Release\IEAutomationDoc.obj
+.\Release\IEAutomationView.obj
+.\Release\MainFrm.obj
+.\Release\StdAfx.obj
+.\Release\IEAutomation.res
+]
+Creating command line "link.exe @C:\DOCUME~1\yue\LOCALS~1\Temp\RSP286.tmp"
+<h3>Output Window</h3>
+Linking...
+   Creating library Release/IEAutomation.lib and object Release/IEAutomation.exp
+
+
+
+<h3>Results</h3>
+IEAutomation.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
